@@ -4,7 +4,6 @@
 <link rel="shortcut icon" href="https://lhpa.github.io/favicon.ico" type="image/x-icon" /><meta name="viewport"content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="apple-mobile-web-app-capable"content="yes"/><meta name="apple-mobile-web-app-status-bar-style"content="black"/><meta name="format-detection"content="telephone=no"/><meta name="renderer"content="webkit"><meta name="description"content="温故而知新"><meta charset="UTF-8"><title>Hello Gridea | Gridea</title>
 <link href="https://lhpa.github.io/styles/main.css" type="text/css" rel="stylesheet" /><link href="https://at.alicdn.com/t/font_1621793_zatzzgvf30g.css" type="text/css" rel="stylesheet" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css"><script async src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.min.js"></script><script src="https://lhpa.github.io/media/js/magnify.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
 <script type="text/javascript">function btn_toggle(){document.getElementById("hn").classList.contains("no-js")?document.getElementById("hn").classList.remove("no-js"):document.getElementById("hn").classList.add("no-js")}</script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 
 <link rel="canonical" href="https://lhpa.github.io/post/hello-gridea/" />
 </head>
@@ -75,23 +74,23 @@
 <div class="doc_comments">
 
 </div></section>
-<div id="comment"></div>
-<span id="comment-count"></span>
+<!--载入js，在</body>之前插入即可-->
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库-->
+    <script src="/media/js/Valine.min.js"></script>
+<div class="comment"></div>
 <script>
-    comment_el = '#comment';
-    comment_count_el = 'span.comment-count';
     new Valine({
-        el: comment_el,				// 评论区元素（要求div）
-        count_el: comment_count_el,    // 评论计数元素（要求span）
-        lang: 'zh-cn',							   // 语言（zh-cn或en）
-        emoticon_url: 'https://cloud.panjunwen.com/alu', // 表情包根目录（自行解决文件托管）
-        emoticon_list: ["吐.png", "狂汗.png", "不说话.png"], // 表情包文件列表
-        app_id: 'SsAi2CtFthX8TyOPzyo5TfKh-MdYXbMMI',			    										   	
-        app_key: 'NIb7gYEhLKbpDweM4Y8ScUQN',    										      
-        placeholder: 'Write a comment',  // 提示符
-        admin_email_hash: 'f32fc1c3f6674bfb5621a60901b5f96c', // 可选，管理员邮箱md5，用于显示管理员标志👮‍
-        max_nest: 3,					// 嵌套评论深度，太大会影响加载速度
-        page_size: 5					// 分页大小
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV, 
+        el: '.comment',
+	      lang: 'zh-cn',//设置评论语言
+        emoticon_url: 'https://cloud.panjunwen.com/alu',
+  emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+  app_id: 'SsAi2CtFthX8TyOPzyo5TfKh-MdYXbMMI',
+  app_key: 'NIb7gYEhLKbpDweM4Y8ScUQN',
+  placeholder: '评论留言'
     });
 </script>
 </div></div></div><script>
